@@ -1,0 +1,18 @@
+CoderChrips Principle Set~
+Created: 8/11/2014
+By: Paul Vo
+Collaborators:
+
+Defining principle: 
+
+a fundamental truth or proposition 
+that serves as the foundation for a 
+system of belief or behavior or for 
+a chain of reasoning.
+
+TODO:
+1. The act of creation includes destruction; As once allocated memory, it needs to be freed one irrelevant.
+2. Comment for effective collaboration; Of natural programming order.
+3.
+4.
+5.
