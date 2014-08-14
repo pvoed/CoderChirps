@@ -50,8 +50,7 @@ public class Chirp {
 	public void setCreation(Date creation){
 		this.creation = creation;
 	}
-	
-	
+
 	public boolean isRoot(){
 		return true;
 	}
