@@ -4,6 +4,7 @@
     <string name="app_name">CoderChirps</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+	<string name="button_PostChirp">Post Chirp</string>
+	<string name ="post_label">Fill below:</string>
 
 </resources>

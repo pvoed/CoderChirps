@@ -1,6 +1,7 @@
 package com.example.coderchirps;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,29 +14,26 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends ListActivity {
-	//extends ListActivity
 
-	private ArrayList<String> list = new ArrayList<String>();
+
+	private ArrayList<String> list = new ArrayList<String>(); // maybe not needed?
 	private ArrayAdapter<String> adapter;
-	//private TextView content;
-	//final ListView listView = (ListView) findViewById(R.id.recentChirpList);
 
-		
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		populate();
+		populateTest();
+		//maybe able to scrap list entirely?
 		this.adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list);
-		//listActivity = new ListActivity();
-		//listActivity.setListAdapter(adapter);
+		//this.adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
 		setListAdapter(adapter);
 	}
 	
@@ -58,25 +56,24 @@ public class MainActivity extends ListActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	public void populate()
+	public void populateTest()
 	{
+		
 		this.list.add("test1");
 		this.list.add("test2");
 		this.list.add("test3");
+		Collections.reverse(list); //cheap way of getting it to display right
 	}
-	public void submitChirp(){
+	public void submitChirp(View view){
 		EditText editText = (EditText) findViewById(R.id.chirpTextField);
 		
-		//Chirp chirp = new Chirp();
-		//chirp.set(editText.getText().toString());
-		//list.add(chirp.getBody());
-		
-		String listItem = editText.getText().toString();
-		list.add(listItem);
-		
+		Chirp chirp = new Chirp();
+		chirp.set(editText.getText().toString());
+		list.add(chirp.getBody());
+		Collections.reverse(list); //cheap way of getting it to display right
 		//Change state of list to add new statement
 		adapter.notifyDataSetChanged();
-		//listView.refreshDrawableState();
+	
 		
 	}
 }
